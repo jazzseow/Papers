@@ -13,3 +13,10 @@
 
 
 # Summary
+* Define simple event type as follows:
+
+![](Images/Soccer_Event_Detection/simple_type_definition.png?style=centerme)
+*efefe*
+
+* Define complex event type 
+
