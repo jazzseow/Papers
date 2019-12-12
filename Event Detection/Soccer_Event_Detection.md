@@ -16,9 +16,9 @@
 * Define simple event type as follows:
 <div align="center"> 
     <img src="Images/Soccer_Event_Detection/simple_type_definition.png"  width="75%">
-    <div style="font-size:85%;width: 75%;text-align: justify;"">
+    <p style="font-size:85%;width: 75%;text-align: justify;">
         <i>ID</i> is the indentifier; <i>seType</i> is the event type, e.g. "<i>throwing the ball</i>"; <i>t</i> is the time instant in which the event occurs; <i>role<sub>n</sub></i> are roles that different objects play, e.g. "<i>throwing_player</i>" and "<i>throwed_ball</i>"; <i>oType<sub>n</sub></i> are the object IDs who are playing those roles
-    </div>
+    </p>
 </div>
 
 * Define complex event type 
