@@ -14,9 +14,8 @@
 
 # Summary
 * Define simple event type as follows:
-![test image size](Images/Soccer_Event_Detection/simple_type_definition.png){:height="50%" width="50%"}
-<div align="center" > 
-    <img src="Images/Soccer_Event_Detection/simple_type_definition.png" style="width:75%;">
+<div align="center"> 
+    <img src="Images/Soccer_Event_Detection/simple_type_definition.png"  width="75%">
     <p style="font-size:75%;">
         <i>ID</i> is the indentifier; <i>seType</i> is the event type, e.g. "<i>throwing the ball</i>"; <i>t</i> is the time instant in which the event occurs; <i>role<sub>n</sub></i> are roles that different objects play, e.g. "<i>throwing_player</i>" and "<i>throwed_ball</i>"; <i>oType<sub>n</sub></i> are the object IDs who are playing those roles
     </p>
