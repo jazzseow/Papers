@@ -55,7 +55,7 @@
 ## Event Used for Experiments
 * Ball possession Event
     *   <div align="center"> 
-            <img src="Images/Soccer_Event_Detection/ball_possession_event.png"  width="75%">
+            <img src="Images/Soccer_Event_Detection/ball_possession_event.png"  height="130px">
             <p align="justify">
                 <i>D</i> is the distance between player <i>p<sub>i</sub></i> and ball <i>b</i> at time <i>t</i>
             </p>
@@ -65,7 +65,7 @@
 
 * Kicking the ball Event
     *   <div align="center"> 
-            <img src="Images/Soccer_Event_Detection/kicking_ball_event.png"  width="75%">
+            <img src="Images/Soccer_Event_Detection/kicking_ball_event.png"  height="100px">
         </div>
 
     * Initially, the distance between the ball and the player has to be low for a few frames. Then, the distance needs to increase in an appropriate number of the subsequent frames until the player is no longer able to interact with the ball
