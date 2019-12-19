@@ -48,9 +48,25 @@
     * **d** is a translation vector,  <img src="Images/Enhanced_skeleton_visualization_for_view_invariant_human_action_recognition/d_vector.png" height="62px"> 
     *  <img src="Images/Enhanced_skeleton_visualization_for_view_invariant_human_action_recognition/rotation_matrix.png" height="205px"> 
 
-### To find Alpha, Beta, and Gamma
-*
+### To find *α*, *β*, and *γ*
+* <img src="Images/Enhanced_skeleton_visualization_for_view_invariant_human_action_recognition/formula_7.png" height="50px">
 
+    * where <img src="Images/Enhanced_skeleton_visualization_for_view_invariant_human_action_recognition/null.png" height="20px"> denotes the set of the seven torso joints
+    Matrix **M** is the torso matrix, which consists of 7 x *F* rows and 3 columns
+
+* |![data visualization pipeline](Images/Enhanced_skeleton_visualization_for_view_invariant_human_action_recognition/fig3.png)|
+    |:--:| 
+    | *Illustration of the view invariant transform. **v** denotes the direction from "right hip" to "left hip". **x** is perpendicular to **z** and has a minimum angle with **v*** |
+
+* **z** is the first principal component of M, which is always aligned with the longer dimension of the torso
+* <img src="Images/Enhanced_skeleton_visualization_for_view_invariant_human_action_recognition/formula_8.png" height="53px">
+
+    * <img src="Images/Enhanced_skeleton_visualization_for_view_invariant_human_action_recognition/dot_prod.png" height="25px"> is a dot product
+    * <img src="Images/Enhanced_skeleton_visualization_for_view_invariant_human_action_recognition/formula_9.png" height="53px">
+* **y** = **z** x **x**
+* *α*, *β*, and *γ* can be determined by transforming **x**, **y**, **z** to [1, 0, 0]<sup>T</sup>, [0, 1, 0]<sup>T</sup>, [0, 0, 1]<sup>T</sup> using Formula 2
+* Ω<sub>1</sub>
+ $\hat{x}$
 ## Data Visualization method
 |![data visualization pipeline](Images/Enhanced_skeleton_visualization_for_view_invariant_human_action_recognition/data_visualization_pipeline.png)|
 |:--:| 
