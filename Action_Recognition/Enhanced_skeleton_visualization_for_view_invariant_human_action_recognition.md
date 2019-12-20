@@ -105,8 +105,7 @@
 * The accumulated motion energy of <img src="Images/Enhanced_skeleton_visualization_for_view_invariant_human_action_recognition/pfn.png" height="24px"> is defined as:
 <img src="Images/Enhanced_skeleton_visualization_for_view_invariant_human_action_recognition/formula_17.png" height="67px">
 
-* Weight of <img src="Images/Enhanced_skeleton_visualization_for_view_invariant_human_action_recognition/pfn.png" height="24px">:  
-<img src="Images/Enhanced_skeleton_visualization_for_view_invariant_human_action_recognition/formula_18.png" height="24px">
+* Weight of <img src="Images/Enhanced_skeleton_visualization_for_view_invariant_human_action_recognition/pfn.png" height="24px">:  <img src="Images/Enhanced_skeleton_visualization_for_view_invariant_human_action_recognition/formula_18.png" height="24px">
     * where 0 ≤ *ρ* ≤ 1 and *norm* normalizes ξ<sub>n</sub> to [0, 1]
 * <img src="Images/Enhanced_skeleton_visualization_for_view_invariant_human_action_recognition/formula_19.png" height="29px"> 
 
@@ -221,4 +220,4 @@ Random Mirror | |  :heavy_check_mark: |
 * Average testing time, including feature extraction and classification
     * Average fusion: 0.65s
     * Weighted fusion: 0.39s (some CNNs are not used)
-    
+
