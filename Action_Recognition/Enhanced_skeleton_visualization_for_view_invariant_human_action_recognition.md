@@ -122,10 +122,8 @@
 * 10 modified AlexNet
 * Mean Subtraction for all input images
 * 2 score fusion methods:  
-    * Average fusion  
-    <img src="Images/Enhanced_skeleton_visualization_for_view_invariant_human_action_recognition/formula_22.png" height="60px">
-    * Weighted fusion  
-    <img src="Images/Enhanced_skeleton_visualization_for_view_invariant_human_action_recognition/formula_23.png" height="55px">  
+    * Average fusion  <img src="Images/Enhanced_skeleton_visualization_for_view_invariant_human_action_recognition/formula_22.png" height="60px">
+    * Weighted fusion  <img src="Images/Enhanced_skeleton_visualization_for_view_invariant_human_action_recognition/formula_23.png" height="55px">  
     where *η<sub>c</sub>* is 0 or 1, indicating whether the *c*th CNN is selected or not
 
 ## Experiments
