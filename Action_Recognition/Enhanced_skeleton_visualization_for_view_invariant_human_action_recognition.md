@@ -127,15 +127,98 @@
     <img src="Images/Enhanced_skeleton_visualization_for_view_invariant_human_action_recognition/formula_22.png" height="60px">
     * Weighted fusion  
     <img src="Images/Enhanced_skeleton_visualization_for_view_invariant_human_action_recognition/formula_23.png" height="55px">  
-    where *η<sub>c</sub>* is 0 or 1
+    where *η<sub>c</sub>* is 0 or 1, indicating whether the *c*th CNN is selected or not
 
 ## Experiments
+* Evaluated on:
+    * [Northwestern-UCLA](https://users.eecs.northwestern.edu/~jwa368/my_data.html) ([paper](http://wangjiangb.github.io/pdfs/crossview.pdf))
+    * [UWA3DII](http://staffhome.ecm.uwa.edu.au/~00053650/databases.html) ([paper](https://arxiv.org/pdf/1409.6813.pdf))
+    * [NTU RGB+D](http://rose1.ntu.edu.sg/datasets/actionrecognition.asp) ([paper](https://arxiv.org/pdf/1604.02808.pdf))
+    * [MSRC-12](https://www.microsoft.com/en-us/download/details.aspx?id=52283) ([paper](http://www.nowozin.net/sebastian/papers/fothergill2012gestures.pdf))
+    
 ### Training
 * Mini-batch SGD with momentum of 0.9, and weight decay of 0.00005
 * Learning rate of 0.001
 * Batch size 50
 * Max training cycle 200
 
-Function | MySQL / MariaDB | PostgreSQL | SQLite
-:------------ | :-------------| :-------------| :-------------
-substr | :heavy_check_mark: |  :white_check_mark: | :heavy_check_mark:
+| | Original | Synthesized | Pretrained (ImageNet) |
+:-: | :-: | :-: | :-: 
+Weight random intialized from [0, 0.01] | :heavy_check_mark: |  :heavy_check_mark: | Third *fc* layer only
+Random Mirror | |  :heavy_check_mark: |
+
+|![fig_10](Images/Enhanced_skeleton_visualization_for_view_invariant_human_action_recognition/fig_10.png)|
+|:--:| 
+| *Convergence curves on the MSRC-12 dataset. The first type of color image is used as input for CNN. Error rate almost converges when the training epoch equals to 200* |
+
+### Northwestern-UCLA
+* 1494 sequences, 10 action categories
+* First 2 cameras for training, and the third camera for testing
+
+|![table_01](Images/Enhanced_skeleton_visualization_for_view_invariant_human_action_recognition/table_01.png)|
+|:--:| 
+| *Results on the Northwestern-UCLA dataset* |
+
+### UWA3DII
+* 30 human actions performed 4 times by 10 subjects
+* Challenging dataset due to:
+    * Varying viewpoints
+    * Self-occlusion
+    * High similarity among actions. E.g. "drinking" and "answering phone" have slightly different location of the hand
+* 2 views for training, and the other 2 for testing
+
+|![table_02](Images/Enhanced_skeleton_visualization_for_view_invariant_human_action_recognition/table_02.png)|
+|:--:| 
+| *Results on the UWA3DII dataset* |
+
+### NTU RGB+D
+* 60 actions performed by 40 subjects from various views, generating 56880 skeleton sequences
+* Contains noisy skeleton joints
+* 20 subjects for training, 20 for testing
+* Training and testing sets have 37,920 samples and 18,960 samples respectively
+* Camera 2 and 3 for training, camera 1 for testing
+
+|![table_03](Images/Enhanced_skeleton_visualization_for_view_invariant_human_action_recognition/table_03.png)|
+|:--:| 
+| *Results on the NTU RGB+D dataset* |
+
+### MSRC-12
+* 594 sequences, 719,359 frames, collected from 30 people performing 12 gestures
+* Single-view dataset, so sequence-based tranform method os not used
+* Odd subjects for training, even subjects for testing
+
+|![table_04](Images/Enhanced_skeleton_visualization_for_view_invariant_human_action_recognition/table_04.png)|
+|:--:| 
+| *Results on the MSRC-12 dataset* |
+
+### Evaluation of Individual Components
+![table_05](Images/Enhanced_skeleton_visualization_for_view_invariant_human_action_recognition/table_05.png)|
+|:--:| 
+| *Results on the MSRC-12 dataset [[13](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/BodyPartRecognition.pdf)]* |
+
+![table_06](Images/Enhanced_skeleton_visualization_for_view_invariant_human_action_recognition/table_06.png)|
+|:--:| 
+| *Evaluation of view invariant transform* |
+
+![table_07](Images/Enhanced_skeleton_visualization_for_view_invariant_human_action_recognition/table_07.png)|
+|:--:| 
+| *Evaluation of visual enhancement* |
+
+![table_08](Images/Enhanced_skeleton_visualization_for_view_invariant_human_action_recognition/table_08.png)|
+|:--:| 
+| *Evaluation of motion enhancement* |
+
+![table_09](Images/Enhanced_skeleton_visualization_for_view_invariant_human_action_recognition/table_09.png)|
+|:--:| 
+| *Evaluation of average fusion and weighted fusion. The types of color images colored in green are selected to generate the weighted fusion results* |
+
+![fig_19](Images/Enhanced_skeleton_visualization_for_view_invariant_human_action_recognition/fig_19.png)|
+|:--:| 
+| *Evaluation of parameter r (radius of the structuring element **E**) and ρ. Left figure shows the accuracy of Visual Enhancement with r ranging from 0 to 10 at an interval of 1. Right figure shows the accuracy of Motion Enhancement with parameter ρ ranging from 0 to 1 at an interval of 0.1* |
+
+### Evaluation of computation time
+* GTX 1080
+* Average testing time, including feature extraction and classification
+    * Average fusion: 0.65s
+    * Weighted fusion: 0.39s (some CNNs are not used)
+    
